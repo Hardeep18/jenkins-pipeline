@@ -13,7 +13,8 @@ node ('kubepod'){
 
         echo "Hello Developer"
         }
-    } else {                                   
+    } else { 
+       stage('k8s cluster'){                                  
         agent { 
                 label 'k8s'
                 }
@@ -23,4 +24,5 @@ node ('kubepod'){
 
     } 
 
+}
 }
