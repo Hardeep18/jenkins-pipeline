@@ -8,7 +8,7 @@ node ('kubepod'){
     }
 
 
-    if (env.BRANCH_NAME == "deployment") {                                          
+    if (env.BRANCH_NAME == "main") {                                          
         stage('develop') {
 
         echo "Hello Developer"
