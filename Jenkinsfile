@@ -1,6 +1,10 @@
 node ('kubepod'){
     def app
-
+    when {
+    expression {
+        return env.BRANCH_NAME != 'master';
+        }
+    }
     stage('Clone repository') {
           /* Let's make sure we have the repository cloned to our workspace */
 
