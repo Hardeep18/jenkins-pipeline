@@ -14,10 +14,13 @@ node ('kubepod'){
         echo "Hello Developer"
         }
     } else {                                   
-        stage('main') {
+        agent { 
+                label 'k8s'
+                }
+                steps {
+                    sh 'kubectl --kubeconfig /var/jenkins_home/kube/config get nodes'
+                }
 
-        echo "Hello main"
-        }
     } 
 
 }
